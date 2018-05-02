@@ -1,0 +1,208 @@
+body {
+  font: 14px "微软雅黑", arial, serif;
+  color: #333;
+}
+
+a {
+  &:link,
+  &:visited {
+    color: #039;
+  }
+}
+
+img {
+  border: 0;
+}
+
+.header {
+  margin: 0 auto;
+  width: 988px;
+}
+
+.nav {
+  position: relative;
+  width: 950px;
+  height: 35px;
+  margin: 0 auto;
+  background: #333;
+  border-top: 1px solid #444;
+
+  .list {
+    list-style-type: none;
+    margin-left: 15px;
+
+    li {
+      float: left;
+      position: relative;
+      height: 35px;
+      line-height: 26px;
+
+      .game-hover {
+        float: left;
+        display: block;
+        margin-top: 5px;
+        height: 30px;
+        padding: 0 10px 0 10px;
+        color: #ccc;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .game-hover-current,
+      .game-hover:hover {
+        background-color: #fff;
+        color: #575757;
+        margin-top: 4px;
+        padding: 0 9px 0 9px;
+        border: 1px solid #666;
+        border-bottom: 0;
+      }
+
+    }
+  }
+}
+
+.hover-cont {
+  display: none;
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 35px;
+  border: {
+    style: solid;
+    color: #666;
+    width: 0 1px 2px 1px;
+  }
+  background: #fff;
+  z-index: 1000;
+
+  .nav-cont {
+    padding: 15px 15px 0;
+  }
+
+  .nav-li {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    *height: auto;
+    *margin-top: 7px;
+    padding-bottom: 5px;
+    *padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
+  }
+
+  .nav-li-l {
+    float: left;
+    width: 80px;
+    color: #f60;
+    font-weight: bold;
+  }
+
+  .nav-li-r {
+    float: left;
+    color: #999;
+    font: {
+      family: "宋体";
+      size: 10px;
+    }
+    line-height: 26px;
+    a {
+      padding: 0 1px 0 1px;
+      color: #666;
+      font-size: 12px;
+      text-decoration: none;
+      &:hover {
+        color: red;
+      }
+      &.orange {
+        color: #f60;
+      }
+    }
+  }
+}
+
+.nav {
+  .list {
+    .wlyx {
+      width: 720px;
+      left: 0;
+    }
+
+    .djdj {
+      width: 800px;
+      left: 0;
+    }
+
+    .yy {
+      width: 740px;
+      left: 0;
+    }
+
+    .dwsy {
+      width: 750px;
+      left: 0;
+    }
+
+    .xsk {
+      width: 740px;
+      left: 0;
+    }
+
+    .cgwr {
+      width: 610px;
+      left: 0;
+    }
+
+    .xz {
+      width: 630px;
+      right: 0;
+    }
+
+    .mt {
+      width: 580px;
+      right: 0;
+    }
+
+    .kyx {
+      width: 610px;
+      right: 0;
+    }
+
+    .wt {
+      width: 510px;
+      right: 0;
+    }
+
+    .cy {
+      width: 540px;
+      right: 0;
+    }
+
+    .wb {
+      width: 710px;
+      right: 0;
+    }
+
+    .xyx {
+      width: 740px;
+      right: 0;
+    }
+
+    .sp {
+      width: 730px;
+      right: 0;
+    }
+
+    .sc {
+      width: 700px;
+      right: 0;
+    }
+  }
+}
+
+.content {
+  margin: 15px auto 0;
+  width: 980px;
+  height: 500px;
+  background: #ccc;
+}
