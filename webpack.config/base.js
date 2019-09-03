@@ -1,7 +1,5 @@
 const path = require("path");
-const autoprefixer = require('autoprefixer');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = require('./config');
 const root = path.resolve(__dirname, '..');
@@ -16,11 +14,13 @@ for (let page in config.pages) {
       removeComments: true,
       collapseWhitespace: false
     },
-    chunks: [page, 'vendors', 'styles'],
-    hash: false
+    hash: false,
+    chunks: [page], // 引入当前对应的js
   };
   htmlPlugins.push(new HTMLWebpackPlugin(conf));
 }
+
+console.log(htmlPlugins)
 
 module.exports = {
   entry: config.entries,
@@ -35,27 +35,16 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
-            options:
-              {
-                importLoaders: 1
-              }
           },
-          {
-            loader: 'sass-loader',
-            options: {
-              strictMath: true,
-              noIeCompat: true
-            }
-          }
+          'sass-loader'
         ]
       },
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader'
           }
@@ -71,7 +60,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
             name: 'images/[name].[ext]?[hash:8]'
           }
@@ -83,7 +72,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8192,
-            name: "fonts/[name].[ext]?[hash:8]"
+            name: 'fonts/[name].[ext]?[hash:8]'
           }
         }
       }
@@ -98,9 +87,6 @@ module.exports = {
     extensions: ['.js']
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css'
-    }),
     ...htmlPlugins
   ]
 }
