@@ -20,8 +20,6 @@ for (let page in config.pages) {
   htmlPlugins.push(new HTMLWebpackPlugin(conf));
 }
 
-console.log(htmlPlugins)
-
 module.exports = {
   entry: config.entries,
   module: {
